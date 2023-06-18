@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Pizza</string>
+    <string name="order_pizza">Order Pizza</string>
+    <string name="small_pizzas">SMALL PIZZAS</string>
+    <string name="medium_pizzas">MEDIUM PIZZAS</string>
+    <string name="large_pizzas">LARGE PIZZAS</string>
+    <string name="choose_recipe">Choose Recipe</string>
+    <string name="meat">Meat</string>
+    <string name="cheese">Cheese</string>
+    <string name="veggies">Veggies</string>
+    <string name="BBQ_chicken">BBQ Chicken</string>
+    <string name="pepperoni">Pepperoni</string>
+    <string name="cancel">Cancel</string>
+    <string name="choose_delivery_date">Choose Delivery Date</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="next">Next</string>
+    <string name="size">Size</string>
+    <string name="recipe">Recipe</string>
+    <string name="subtotal_price">Subtotal %s</string>
+    <string name="total_price">Total %s</string>
+    <string name="new_pizza_order">New Pizza Order</string>
+    <string name="delivery_date">delivery date</string>
+    <string name="send">Send Order to Another App</string>
+    <string name="order_details">Size: pizza \n Recipe: %2$s \nDelivery date: %3$s \n
+        Total: %4$s \n\n Thank you!</string>
+    <string name="bbq_chicken">BBQ_Chicken</string>
+    <string name="slices">SLICES</string>
+    <string name="slice">SLICE</string>
+
+    <plurals name = "slices">
+        <item quantity="one">%d slice</item>
+        <item quantity="other">%d slices</item>
+
+    </plurals>
+
+</resources>
+
+
+

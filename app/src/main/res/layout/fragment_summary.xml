@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SummaryFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.pizza.model.OrderViewModel" />
+
+        <variable
+            name="summaryFragment"
+            type="com.example.pizza.SummaryFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/side_margin">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/size_label"
+                    style="@style/Widget.Pizza.TextView.OrderSummary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/slice"
+                    android:textAllCaps="true"
+                    android:textStyle="normal"/>
+                
+                <TextView
+                    android:id="@+id/size"
+                    style="@style/Widget.Pizza.TextView.OrderSummary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.slice.toString()}"
+                    android:layout_marginTop="@dimen/order_summary_margin"
+                    tools:text ="Medium"/>
+                
+                <View
+                    android:id="@+id/divider1"
+                    style="@style/Widget.Pizza.Divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/side_margin"
+                    android:layout_marginBottom="@dimen/side_margin"/>
+
+                <TextView
+                    android:id="@+id/recipe_label"
+                    style="@style/Widget.Pizza.TextView.Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/recipe"/>
+
+                <TextView
+                    android:id="@+id/recipe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.Pizza.TextView.OrderSummary"
+                    android:text="@{viewModel.recipe}"
+                    android:layout_marginTop="@dimen/order_summary_margin"
+                    tools:text ="Cheese"/>
+                
+                <View
+                    android:id="@+id/divide2"
+                    style="@style/Widget.Pizza.Divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/side_margin"
+                    android:layout_marginBottom="@dimen/side_margin"/>
+
+                <TextView
+                    android:id="@+id/delivery_label"
+                    style="@style/Widget.Pizza.TextView.Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/delivery_date"/>
+
+                <TextView
+                    android:id="@+id/date"
+                    style="@style/Widget.Pizza.TextView.OrderSummary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="21dp"
+                    android:layout_marginTop="@dimen/order_summary_margin"
+                    android:text="@{viewModel.date}"
+                    tools:text="Sunday" />
+
+                <View
+                    android:id="@+id/divider3"
+                    style="@style/Widget.Pizza.Divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/side_margin"
+                    android:layout_marginBottom="@dimen/margin_between_elements"/>
+
+                <TextView
+                    android:id="@+id/total"
+                    style="@style/Widget.Pizza.TextView.FinalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/total_price(viewModel.price)}"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="@dimen/side_margin"
+                    tools:text= "Total #5.00"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/send_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/side_margin"
+                android:text="@string/send"/>
+            
+            <Button
+                android:id="@+id/cancel_button"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_elements"
+                android:text="@string/cancel"/>
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+    </ScrollView>
+
+    </layout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".RecipeFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.pizza.model.OrderViewModel" />
+        <variable
+            name="recipeFragment"
+            type="com.example.pizza.RecipeFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/side_margin">
+
+            <RadioGroup
+                android:id="@+id/flavor_options"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                
+                <RadioButton
+                    android:id="@+id/meat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.recipe.equals(@string/meat)}"
+                    android:onClick="@{() ->viewModel.setRecipe(@string/meat)}"
+                    android:text="@string/meat"/>
+
+                <RadioButton
+                    android:id="@+id/cheese"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.recipe.equals(@string/cheese)}"
+                    android:onClick="@{() ->viewModel.setRecipe(@string/cheese)}"
+                    android:text="@string/cheese"/>
+
+                <RadioButton
+                    android:id="@+id/veggies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.recipe.equals(@string/veggies)}"
+                    android:onClick="@{() ->viewModel.setRecipe(@string/veggies)}"
+                    android:text="@string/veggies"/>
+
+                <RadioButton
+                    android:id="@+id/BBQ_chicken"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.recipe.equals(@string/bbq_chicken)}"
+                    android:onClick="@{() ->viewModel.setRecipe(@string/bbq_chicken)}"
+                    android:text="@string/bbq_chicken"/>
+
+                <RadioButton
+                    android:id="@+id/pepperoni"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.recipe.equals(@string/pepperoni)}"
+                    android:onClick="@{() -> viewModel.setRecipe(@string/pepperoni)}"
+                    android:text="@string/pepperoni"/>
+
+            </RadioGroup>
+
+            <View
+                android:id="@+id/divider"
+                style="@style/Widget.Pizza.Divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/side_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/flavor_options" />
+
+            <TextView
+                android:id="@+id/subtotal"
+                style="@style/Widget.Pizza.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{@string/subtotal_price(viewModel.price)}"
+                android:layout_marginTop="@dimen/side_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider"
+                tools:text="Subtotal #5.00"/>
+
+            <Button
+                android:id="@+id/cancel_button"
+                style="?attr/materialButtonOutlinedStyle"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:layout_marginEnd="@dimen/side_margin"
+                app:layout_constraintEnd_toStartOf="@+id/next_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/next_button"/>
+
+            <Button
+                android:id="@+id/next_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/side_margin"
+                android:text="@string/next"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cancel_button"
+                app:layout_constraintTop_toBottomOf="@+id/subtotal"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+    </layout>
